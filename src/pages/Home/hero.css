@@ -1,6 +1,6 @@
 .hero {
   /* Исправленный путь: теперь лезем в папку images внутри public */
-  background: #f1f1f1 url('/images/hero-bg.jpg') no-repeat center; 
+  background: #f1f1f1 url('/images/hero-bg.jpg') no-repeat center;
   background-size: cover;
   background-position: center;
   

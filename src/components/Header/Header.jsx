@@ -14,8 +14,8 @@ const Header = () => {
         {/* Логотип — путь изменен на /images/Group.png */}
         <Link to="/" className="header__logo">
           <img 
-            src="/images/Group.png" 
-            alt="Belatea" 
+          src="/image/Group.png" 
+          alt="" 
           />
           <span>Belatea</span>
         </Link>
