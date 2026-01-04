@@ -16,7 +16,16 @@
   font-family: inherit;
 }
 
-/* Основная темно-синяя кнопка (как в хедере) */
+/* Стили для иконок из папки public */
+.my-btn img.btn-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  /* Если иконка черная, а кнопка синяя — инвертируем в белый */
+  filter: brightness(0) invert(1);
+}
+
+/* Варианты кнопок */
 .my-btn.primary {
   background-color: #274C5B;
   color: white;
@@ -28,44 +37,23 @@
   transform: translateY(-1px);
 }
 
-/* Зеленая кнопка (Акцентная) */
 .my-btn.success {
   background-color: #7EB12D;
   color: white;
 }
 
-.my-btn.success:hover {
-  background-color: #6a9626;
-  box-shadow: 0 4px 12px rgba(126, 177, 45, 0.2);
-}
-
-/* Контурная кнопка */
 .my-btn.outline {
   background-color: transparent;
   border: 2px solid #274C5B;
   color: #274C5B;
 }
 
-.my-btn.outline:hover {
-  background-color: #274C5B;
-  color: white;
+.my-btn.outline img.btn-icon {
+  filter: none; /* Для контурной кнопки иконку оставляем оригинальной */
 }
 
-/* Кнопка удаления (для корзины) */
-.my-btn.danger {
-  background-color: #ff4d4d;
-  color: white;
-}
-
-.my-btn.danger:hover {
-  background-color: #ff3333;
-}
-
-/* Состояние "заблокировано" */
 .my-btn:disabled {
   background-color: #E0E0E0;
   color: #BDBDBD;
   cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
 }

@@ -1,75 +1,88 @@
+/* Основная секция Hero */
 .hero {
-  /* Исправленный путь: теперь лезем в папку images внутри public */
-  background: #f1f1f1 url('/images/hero-bg.jpg') no-repeat center;
+  /* Путь к картинке в папке public */
+  background-image: url('/public/photo-22.png'); 
   background-size: cover;
   background-position: center;
-  
-  height: 85vh; 
-  min-height: 600px;
+  background-repeat: no-repeat;
+  height: 600px; 
   display: flex;
   align-items: center;
-  position: relative;
-  /* Добавил небольшой оверлей, если картинка будет слишком светлой и текст потеряется */
-  background-blend-mode: multiply;
-  background-color: rgba(255, 255, 255, 0.1); 
+  width: 100%;
 }
 
 .hero__content {
-  max-width: 650px;
-  animation: fadeInUp 0.8s ease-out;
-  /* Контейнер должен быть внутри hero, проверь это в JSX */
-  z-index: 2;
+  max-width: 600px; /* Чтобы текст не перекрывал масло на фоне */
+  padding-left: 20px;
 }
 
-.hero .sub-title {
-  font-family: 'Yellowtail', cursive; 
-  color: #7EB12D; /* Твой фирменный зеленый */
-  font-size: 36px;
-  margin-bottom: 10px;
+/* Тот самый рукописный подзаголовок */
+.hero__subtitle {
   display: block;
+  color: #7EB12D; /* Зеленый цвет */
+  font-size: 32px;
+  font-family: 'Yellowtail', cursive; /* Если шрифт не подключен, будет просто курсив */
+  margin-bottom: 8px;
 }
 
+/* Главный заголовок (темно-синий) */
 .hero h1 {
-  font-size: 70px;
-  line-height: 1.1;
-  color: #274C5B; /* Темно-синий */
+  color: #274C5B; /* Цвет из твоего макета */
+  font-size: 56px;
   font-weight: 800;
-  margin-bottom: 40px;
+  line-height: 1.1;
+  margin-bottom: 25px;
 }
 
-/* Анимация появления */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Кнопка "В КАТАЛОГ" */
+.hero .my-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EFD372; /* Желтый фон */
+  color: #274C5B; /* Темно-синий текст */
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Адаптивность */
-@media (max-width: 1024px) {
-  .hero h1 {
-    font-size: 55px;
-  }
+.hero .my-button:hover {
+  background-color: #e5c55a;
 }
 
+/* ИСПРАВЛЕНИЕ СТРЕЛКИ (чтобы не была битой) */
+.hero .button-icon {
+  width: 18px; /* Фиксируем размер */
+  height: 18px;
+  margin-left: 10px; /* Отступ от текста */
+  display: inline-block;
+  object-fit: contain;
+}
+
+/* Адаптив для мобилок */
 @media (max-width: 768px) {
-  .hero {
-    height: auto;
-    padding: 100px 0;
-    text-align: center;
-    background-position: 25% center; /* Сдвигаем фон, чтобы на мобилках было видно суть фото */
-  }
-  .hero__content {
-    margin: 0 auto;
-  }
   .hero h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
-  .hero .sub-title {
-    font-size: 28px;
+  .hero {
+    height: 450px;
   }
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.catalog__card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain; 
+  background: #F9F8F8;
+  border-radius: 20px;
 }

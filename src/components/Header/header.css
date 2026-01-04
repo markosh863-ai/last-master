@@ -13,7 +13,6 @@
   align-items: center;
 }
 
-/* Логотип */
 .header__logo {
   display: flex;
   align-items: center;
@@ -23,7 +22,9 @@
 
 .header__logo img {
   height: 35px;
-  /* Путь подтягивается из public/images/ через HTML, здесь только стили */
+  /* Добавим, чтобы логотип не деформировался */
+  width: auto;
+  object-fit: contain;
 }
 
 .header__logo span {
@@ -32,7 +33,6 @@
   color: #274C5B;
 }
 
-/* Навигация */
 .header__nav {
   display: flex;
   gap: 35px;
@@ -51,7 +51,6 @@
   color: #7EB12D;
 }
 
-/* Кнопка корзины */
 .cart-btn {
   display: flex;
   align-items: center;
@@ -79,11 +78,12 @@
   align-items: center;
 }
 
-/* Иконка корзины берется из /images/cart-icon.png */
 .cart-icon-circle img {
   width: 20px;
   height: 20px;
+  /* Белый цвет для иконки */
   filter: brightness(0) invert(1); 
+  object-fit: contain;
 }
 
 .cart-text {
@@ -92,7 +92,6 @@
   font-size: 18px;
 }
 
-/* Адаптив */
 @media (max-width: 768px) {
   .header__nav {
     display: none;

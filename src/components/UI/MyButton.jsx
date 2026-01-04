@@ -1,12 +1,21 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './MyButton.css';
 
-const MyButton = ({ children, variant = 'primary', ...props }) => {
+const MyButton = ({ children, variant, icon, ...props }) => {
   return (
-    <button className={`my-btn ${variant}`} {...props}>
+    <button className={`my-button ${variant}`} {...props}>
       {children}
+      {icon && (
+        <img
+          src={icon}
+          alt="icon"
+          className="button-icon"
+          style={{ marginLeft: '10px', width: '18px' }}
+        />
+      )}
     </button>
   );
 };
 
-export default MyButton;    
+export default MyButton;

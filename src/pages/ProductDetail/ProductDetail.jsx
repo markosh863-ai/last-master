@@ -1,78 +1,45 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { productsData } from '../../Data/Data'; 
-import './ProductDetail.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../../store/Slice/UserSlice';
+import MyButton from '../../components/UI/MyButton.jsx';
+import './ProductDetail.css'
 
 const ProductDetail = () => {
-    const { id } = useParams();
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  
+  const product = useSelector(state => 
+    state.products.items.find(item => item.id === parseInt(id))
+  );
 
-    // Ищем товар по ID
-    const product = productsData.find(item => item.id === parseInt(id));
+  if (!product) return <div className="container">Товар не найден</div>;
 
-    // Скролл вверх при переходе
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [id]);
-
-    if (!product) {
-        return (
-            <div className="container" style={{padding: '100px 0', textAlign: 'center'}}>
-                <h2>Товар не найден, бро!</h2>
-            </div>
-        );
-    }
-
-    return (
-        <div className="product-page">
-            <div className="container">
-                <div className="product-flex">
-
-                    {/* Левая колонка: Фото товара */}
-                    <div className="product-image-block">
-                        <div className="image-card">
-                            <span className="type-tag">{product.tag}</span>
-                            {/* Исправленный путь к картинке */}
-                            <img
-                                src={`/images/${product.img}`}
-                                alt={product.name}
-                            />
-                        </div>
-                    </div>
-
-                    {/* Правая колонка: Детали и кнопки */}
-                    <div className="product-info-block">
-                        <h1 className="title">{product.name}</h1>
-                        <div className="stars" style={{color: '#FFA800', marginBottom: '10px'}}>
-                            ⭐⭐⭐⭐⭐ (5.0)
-                        </div>
-                        <div className="price-tag">{product.price}</div>
-
-                        <p className="description">{product.description}</p>
-
-                        <div className="specs" style={{marginBottom: '30px', color: '#274C5B'}}>
-                            <p style={{marginBottom: '10px'}}><strong>Категория:</strong> {product.tag}</p>
-                            <p><strong>Объем/Вес:</strong> {product.weight || '250 мл'}</p>
-                        </div>
-
-                        {/* Кнопки на маркетплейсы */}
-                        <div className="buy-buttons">
-                            {product.wb && (
-                                <a href={product.wb} target="_blank" rel="noreferrer" className="wb-link">
-                                    Заказать на Wildberries
-                                </a>
-                            )}
-                            {product.ozon && (
-                                <a href={product.ozon} target="_blank" rel="noreferrer" className="ozon-link">
-                                    Заказать на OZON
-                                </a>
-                            )}
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+  return (
+    <div className="product-detail">
+      <div className="container product-detail__flex">
+        <div className="product-detail__image-block">
+          {/* Исправляем путь к картинке для глубоких ссылок */}
+          <img src={`/${product.img}`} alt={product.name} />
         </div>
-    );
+        
+        <div className="product-detail__info">
+          <h1>{product.name}</h1>
+          {/* Убираем двойную валюту "$ ₽" */}
+          <p className="product-detail__price">{product.price}</p>
+          
+          <div className="product-detail__action">
+            <MyButton 
+              variant="yellow" 
+              onClick={() => dispatch(addToCart(product))}
+            >
+              В корзину
+            </MyButton>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ProductDetail;

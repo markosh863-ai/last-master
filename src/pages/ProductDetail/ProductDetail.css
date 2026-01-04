@@ -1,133 +1,121 @@
-.product-page {
+.product-detail {
   padding: 100px 0;
-  background-color: #fff;
 }
 
-.product-flex {
+.product-detail__flex {
   display: flex;
-  gap: 70px;
-  align-items: flex-start;
+  gap: 50px;
+  align-items: center;
 }
 
-/* Блок с фото */
-.product-image-block {
+.product-detail__image {
   flex: 1;
-}
-
-.image-card {
-  background: #F9F8F8; /* Фирменный серый фон как в каталоге */
+  background: #F9F8F8;
   border-radius: 30px;
-  padding: 50px;
+  padding: 40px;
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 550px; /* Чтобы карточка была солидной */
 }
 
-/* Настройка для фото товара из /images/ */
-.image-card img {
+.product-detail__image img {
   max-width: 100%;
-  max-height: 500px;
-  object-fit: contain; /* Сохраняем пропорции бутылок масла и пачек муки */
-  transition: transform 0.5s ease;
+  height: auto;
+  object-fit: contain;
 }
 
-.image-card:hover img {
-  transform: scale(1.05); /* Легкий зум при просмотре */
-}
-
-.type-tag {
+.product-tag {
   position: absolute;
   top: 30px;
   left: 30px;
   background: #274C5B;
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 10px;
-  font-weight: 600;
-  z-index: 2;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 8px;
 }
 
-/* Блок с текстом */
-.product-info-block {
+.product-detail__content {
   flex: 1;
 }
 
-.title {
-  font-size: 45px;
+.product-detail__content h1 {
+  font-size: 40px;
   color: #274C5B;
   margin-bottom: 10px;
-  font-weight: 800;
-  line-height: 1.1;
 }
 
-.price-tag {
+.product-detail__price {
+  font-size: 25px;
+  font-weight: 800;
+  color: #274C5B;
+  margin-bottom: 25px;
+}
+
+.product-detail__desc {
+  color: #525C60;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.product-detail__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #274C5B;
+}
+
+.quantity-input input {
+  width: 60px;
+  padding: 10px;
+  border: 2px solid #274C5B;
+  border-radius: 12px;
+  text-align: center;
+}
+.product-detail {
+  padding: 80px 0;
+}
+
+.product-detail__flex {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.product-detail__image-block {
+  flex: 1;
+  background: #F9F8F8;
+  border-radius: 30px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-detail__image-block img {
+  max-width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+.product-detail__info {
+  flex: 1;
+}
+
+.product-detail__info h1 {
+  font-size: 48px;
+  color: #274C5B;
+  margin-bottom: 20px;
+}
+
+.product-detail__price {
   font-size: 32px;
   font-weight: 700;
   color: #274C5B;
-  margin: 25px 0;
-}
-
-.description {
-  color: #525C60;
-  line-height: 1.8;
-  font-size: 18px;
-  margin-bottom: 40px;
-}
-
-/* Кнопки маркетплейсов */
-.buy-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 400px; /* Чтобы кнопки не были слишком длинными */
-}
-
-.wb-link, .ozon-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 65px;
-  border-radius: 15px;
-  color: #fff !important;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.3s;
-  font-size: 18px;
-}
-
-.wb-link {
-  background: #CB248D; /* Wildberries */
-}
-
-.ozon-link {
-  background: #005BFF; /* OZON */
-}
-
-.wb-link:hover, .ozon-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  filter: brightness(1.1);
-}
-
-/* Адаптив */
-@media (max-width: 992px) {
-  .product-flex {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .image-card {
-    min-height: auto;
-    padding: 30px;
-  }
-
-  .image-card img {
-    height: 350px;
-  }
-  
-  .title {
-    font-size: 32px;
-  }
+  margin-bottom: 30px;
 }

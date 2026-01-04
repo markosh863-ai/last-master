@@ -1,12 +1,15 @@
+/* Подключаем шрифты (убедись, что они есть в index.html или замени на системные) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Yellowtail&display=swap');
+
 :root {
-  /* Твои фирменные цвета из логотипа и папки images */
-  --primary-color: #274C5B; /* Темно-синий */
-  --accent-color: #7EB12D;  /* Зеленый */
-  --bg-light: #F9F8F8;      /* Светло-серый фон для карточек товаров */
-  --text-dark: #274C5B;
-  --text-gray: #525C60;     /* Цвет для описаний */
+  --primary-color: #274C5B;   /* Темно-синий из Figma */
+  --accent-color: #7EB12D;    /* Зеленый */
+  --text-gray: #525C60;       /* Цвет описаний */
+  --bg-light: #F9F8F8;        /* Светло-серый фон карточек */
+  --white: #ffffff;
 }
 
+/* Обнуление стилей (Reset) */
 * {
   margin: 0;
   padding: 0;
@@ -14,51 +17,56 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Поменял на Roboto, как в макете */
-  background-color: #ffffff;
-  color: var(--text-dark);
-  line-height: 1.6;
-  overflow-x: hidden; /* Чтобы ничего не вылетало за края */
+  font-family: 'Roboto', sans-serif;
+  color: var(--primary-color);
+  line-height: 1.5;
+  background-color: var(--white);
+  overflow-x: hidden;
 }
 
+/* Общий контейнер для всех страниц */
 .container {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.main-content {
-  min-height: 80vh;
-}
-
-.section-padding {
-  padding: 80px 0;
-}
-
-/* Настройки для всех фото из /images/ */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  /* Плавная загрузка картинок */
-  transition: opacity 0.3s ease-in;
-}
-
-/* Глобальные стили для шрифтов из Figma */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--primary-color);
+/* Стили заголовков для всего приложения */
+h1, h2, h3, h4 {
   font-weight: 800;
+  color: var(--primary-color);
 }
 
-/* Убираем стандартные подчеркивания у всех ссылок */
 a {
   text-decoration: none;
-  color: inherit;
+  transition: 0.3s;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Глобальные вспомогательные классы */
+.section-padding {
+  padding: 100px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Анимация для кнопок и карточек */
+.hover-scale:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Фикс для липкого хедера */
+main {
+  min-height: calc(100vh - 200px); /* Чтобы футер не прыгал вверх */
 }

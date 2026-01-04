@@ -1,59 +1,33 @@
 import React from 'react';
-import { productsData } from '../../Data/Data'; 
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import MyButton from '../../components/UI/MyButton'; // Импортируем твою крутую кнопку
 import './catalog.css';
 
 const Catalog = () => {
+  const products = useSelector(state => state.products.items || []);
+
   return (
     <div className="catalog-page">
-      {/* Баннер страницы */}
-      <section className="catalog-header">
-        <div className="catalog-container">
-          <span className="section-subtitle">Organic Only</span>
-          <h1 className="section-title">Каталог</h1>
-        </div>
-      </section>
-
-      <section className="catalog-products">
-        <div className="catalog-container">
-          <div className="products-grid">
-            {productsData.map((product) => (
-              <div key={product.id} className="product-card">
-                {/* Ссылка теперь только на картинку и название, чтобы кнопка работала отдельно */}
-                <Link to={`/product/${product.id}`} className="product-link">
-                  <div className="product-tag">{product.tag}</div>
-
-                  <div className="product-img-wrapper">
-                    {/* Путь настроен на public/images/ */}
-                    <img
-                      src={`/images/${product.img}`}
-                      alt={product.name}
-                      className="product-main-img"
-                    />
-                  </div>
-
-                  <div className="product-info">
-                    <h4 className="product-name">{product.name}</h4>
-                  </div>
+      <div className="container">
+        <h1 className="catalog-title">Наш ассортимент</h1>
+        <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '30px', marginTop: '40px' }}>
+          {products && products.length > 0 ? (
+            products.map((product) => (
+              <div key={product.id} className="catalog-card" style={{ border: '1px solid #eee', padding: '20px', borderRadius: '16px', textAlign: 'center' }}>
+                {/* Картинки берем из public */}
+                <img src={product.img} alt={product.name} style={{ width: '100%', marginBottom: '15px' }} />
+                <h3 style={{ color: '#274C5B' }}>{product.name}</h3>
+                <p style={{ fontWeight: 'bold', margin: '10px 0' }}>{product.price} ₽</p>
+                <Link to={`/product/${product.id}`} style={{ color: '#7EB12D', textDecoration: 'none', fontWeight: 'bold' }}>
+                  Подробнее
                 </Link>
-
-                {/* Нижняя часть с ценой и твоей кнопкой MyButton */}
-                <div className="product-footer">
-                  <span className="product-price">{product.price}</span>
-                  <MyButton variant="primary">
-                    <img 
-                      src="/images/cart-icon.png" 
-                      alt="cart" 
-                      style={{ width: '18px', filter: 'brightness(0) invert(1)' }} 
-                    />
-                  </MyButton>
-                </div>
               </div>
-            ))}
-          </div>
+            ))
+          ) : (
+            <p>Загрузка товаров...</p>
+          )}
         </div>
-      </section>
+      </div>
     </div>
   );
 };

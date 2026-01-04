@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        {/* Оранжевый баннер с тыквами */}
+        {/* Оранжевый баннер с тыквами. Фон управляется через footer.css (там мы уже прописали photo-20 или image-17) */}
         <div className="subscribe-banner">
           <h2>Узнайте первыми о новых акциях!</h2>
           <form className="subscribe-form" onSubmit={(e) => e.preventDefault()}>
@@ -35,8 +35,11 @@ const Footer = () => {
           {/* Центральная колонка */}
           <div className="footer__col footer__center">
             <div className="footer__logo">
-              {/* Исправленный путь к логотипу в папке images */}
-              <img src="/images/Group.png" alt="Belatea" />
+              {/* Исправлено: путь теперь точно соответствует твоему group.png в корне public */}
+              <img
+                src={`${import.meta.env.BASE_URL}group.png`}
+                alt="Belatea"
+              />
               <span>Belatea</span>
             </div>
             <p className="footer__motto">Мы предлагаем только то, что едим сами. Натурально, честно, полезно.</p>
