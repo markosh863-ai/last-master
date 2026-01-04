@@ -1,0 +1,71 @@
+/* Базовый класс для всех кнопок */
+.my-btn {
+  padding: 12px 24px;
+  border-radius: 33px; /* Округлая форма как в Figma */
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+/* Основная темно-синяя кнопка (как в хедере) */
+.my-btn.primary {
+  background-color: #274C5B;
+  color: white;
+}
+
+.my-btn.primary:hover {
+  background-color: #335b6d;
+  box-shadow: 0 4px 12px rgba(39, 76, 91, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Зеленая кнопка (Акцентная) */
+.my-btn.success {
+  background-color: #7EB12D;
+  color: white;
+}
+
+.my-btn.success:hover {
+  background-color: #6a9626;
+  box-shadow: 0 4px 12px rgba(126, 177, 45, 0.2);
+}
+
+/* Контурная кнопка */
+.my-btn.outline {
+  background-color: transparent;
+  border: 2px solid #274C5B;
+  color: #274C5B;
+}
+
+.my-btn.outline:hover {
+  background-color: #274C5B;
+  color: white;
+}
+
+/* Кнопка удаления (для корзины) */
+.my-btn.danger {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.my-btn.danger:hover {
+  background-color: #ff3333;
+}
+
+/* Состояние "заблокировано" */
+.my-btn:disabled {
+  background-color: #E0E0E0;
+  color: #BDBDBD;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

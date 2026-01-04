@@ -1,0 +1,133 @@
+.product-page {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.product-flex {
+  display: flex;
+  gap: 70px;
+  align-items: flex-start;
+}
+
+/* Блок с фото */
+.product-image-block {
+  flex: 1;
+}
+
+.image-card {
+  background: #F9F8F8; /* Фирменный серый фон как в каталоге */
+  border-radius: 30px;
+  padding: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 550px; /* Чтобы карточка была солидной */
+}
+
+/* Настройка для фото товара из /images/ */
+.image-card img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain; /* Сохраняем пропорции бутылок масла и пачек муки */
+  transition: transform 0.5s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.05); /* Легкий зум при просмотре */
+}
+
+.type-tag {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: #274C5B;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+/* Блок с текстом */
+.product-info-block {
+  flex: 1;
+}
+
+.title {
+  font-size: 45px;
+  color: #274C5B;
+  margin-bottom: 10px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.price-tag {
+  font-size: 32px;
+  font-weight: 700;
+  color: #274C5B;
+  margin: 25px 0;
+}
+
+.description {
+  color: #525C60;
+  line-height: 1.8;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* Кнопки маркетплейсов */
+.buy-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px; /* Чтобы кнопки не были слишком длинными */
+}
+
+.wb-link, .ozon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  border-radius: 15px;
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.wb-link {
+  background: #CB248D; /* Wildberries */
+}
+
+.ozon-link {
+  background: #005BFF; /* OZON */
+}
+
+.wb-link:hover, .ozon-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  filter: brightness(1.1);
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+  .product-flex {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .image-card {
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .image-card img {
+    height: 350px;
+  }
+  
+  .title {
+    font-size: 32px;
+  }
+}

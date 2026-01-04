@@ -1,0 +1,75 @@
+.hero {
+  /* Исправленный путь: теперь лезем в папку images внутри public */
+  background: #f1f1f1 url('/images/hero-bg.jpg') no-repeat center; 
+  background-size: cover;
+  background-position: center;
+  
+  height: 85vh; 
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* Добавил небольшой оверлей, если картинка будет слишком светлой и текст потеряется */
+  background-blend-mode: multiply;
+  background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.hero__content {
+  max-width: 650px;
+  animation: fadeInUp 0.8s ease-out;
+  /* Контейнер должен быть внутри hero, проверь это в JSX */
+  z-index: 2;
+}
+
+.hero .sub-title {
+  font-family: 'Yellowtail', cursive; 
+  color: #7EB12D; /* Твой фирменный зеленый */
+  font-size: 36px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.hero h1 {
+  font-size: 70px;
+  line-height: 1.1;
+  color: #274C5B; /* Темно-синий */
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    background-position: 25% center; /* Сдвигаем фон, чтобы на мобилках было видно суть фото */
+  }
+  .hero__content {
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: 40px;
+  }
+  .hero .sub-title {
+    font-size: 28px;
+  }
+}

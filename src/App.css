@@ -1,0 +1,64 @@
+:root {
+  /* Твои фирменные цвета из логотипа и папки images */
+  --primary-color: #274C5B; /* Темно-синий */
+  --accent-color: #7EB12D;  /* Зеленый */
+  --bg-light: #F9F8F8;      /* Светло-серый фон для карточек товаров */
+  --text-dark: #274C5B;
+  --text-gray: #525C60;     /* Цвет для описаний */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Поменял на Roboto, как в макете */
+  background-color: #ffffff;
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden; /* Чтобы ничего не вылетало за края */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-content {
+  min-height: 80vh;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+/* Настройки для всех фото из /images/ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* Плавная загрузка картинок */
+  transition: opacity 0.3s ease-in;
+}
+
+/* Глобальные стили для шрифтов из Figma */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  font-weight: 800;
+}
+
+/* Убираем стандартные подчеркивания у всех ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
