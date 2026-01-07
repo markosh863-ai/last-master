@@ -1,5 +1,4 @@
 .promo {
-  /* Наплыв на Hero секцию */
   margin-top: -80px; 
   position: relative;
   z-index: 10;
@@ -16,7 +15,7 @@
   border-radius: 30px;
   padding: 50px;
   display: flex;
-  flex-direction: column; /* Чтобы сабтайтл был над тайтлом */
+  flex-direction: column; 
   justify-content: center;
   align-items: flex-start;
   background-size: cover;
@@ -30,7 +29,6 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* ИСПРАВЛЕНО: пути теперь ведут в /images/ */
 .promo__item--pink {
   background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('/images/promo-pink.jpg');
   color: #FFFFFF;
@@ -38,7 +36,7 @@
 
 .promo__item--blue {
   background-image: url('/images/promo-blue.jpg');
-  color: #274C5B; /* Твой основной темно-синий */
+  color: #274C5B; 
 }
 
 .promo__title {
@@ -63,7 +61,6 @@
   color: #7EB12D !important;
 }
 
-/* --- АДАПТИВНОСТЬ --- */
 
 @media (max-width: 992px) {
   .promo__title {
@@ -73,12 +70,12 @@
 
 @media (max-width: 768px) {
   .promo {
-    margin-top: 40px; /* Убираем наплыв, чтобы не перекрывать контент */
+    margin-top: 40px; 
     padding: 0 10px;
   }
 
   .promo__grid {
-    grid-template-columns: 1fr; /* В один столбик */
+    grid-template-columns: 1fr; 
   }
 
   .promo__item {

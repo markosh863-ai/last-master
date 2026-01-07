@@ -1,7 +1,6 @@
-/* Базовый класс для всех кнопок */
 .my-btn {
   padding: 12px 24px;
-  border-radius: 33px; /* Округлая форма как в Figma */
+  border-radius: 33px; 
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -16,16 +15,13 @@
   font-family: inherit;
 }
 
-/* Стили для иконок из папки public */
 .my-btn img.btn-icon {
   width: 18px;
   height: 18px;
   object-fit: contain;
-  /* Если иконка черная, а кнопка синяя — инвертируем в белый */
   filter: brightness(0) invert(1);
 }
 
-/* Варианты кнопок */
 .my-btn.primary {
   background-color: #274C5B;
   color: white;
@@ -49,7 +45,7 @@
 }
 
 .my-btn.outline img.btn-icon {
-  filter: none; /* Для контурной кнопки иконку оставляем оригинальной */
+  filter: none; 
 }
 
 .my-btn:disabled {

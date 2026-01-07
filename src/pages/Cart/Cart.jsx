@@ -1,39 +1,68 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart } from '../../store/Slice/UserSlice';
-import MyButton from '../../components/UI/MyButton'; // Проверь этот путь!
+import { addToCart, removeFromCart, clearCart } from '../../store/Slice/UserSlice';
 import './cart.css';
 
 const Cart = () => {
   const dispatch = useDispatch();
-  // Достаем cartItems, как ты и называл в слайсе
   const cartItems = useSelector(state => state.products.cartItems || []);
   const totalAmount = useSelector(state => state.products.totalAmount || 0);
+
+  const handleCheckout = () => {
+    if (cartItems.length > 0) {
+      alert(`Заказ на сумму ${totalAmount.toLocaleString()}$ принят!`);
+      dispatch(clearCart());
+    }
+  };
 
   return (
     <div className="cart-page">
       <div className="container">
-        <h1>Корзина</h1>
+        <h1 className="cart-title">Корзина</h1>
+        
         {cartItems.length === 0 ? (
-          <p>Ваша корзина пуста</p>
+          <div className="empty-cart">
+            <p>Ваша корзина пуста</p>
+          </div>
         ) : (
           <div className="cart-content">
-            {cartItems.map(item => (
-              <div key={item.id} className="cart-item">
-                <img
-                  src={window.location.origin + '/' + item.img}
-                  alt={item.name}
-                  style={{ width: '100px', height: 'auto', objectFit: 'contain' }}
-                />
-                <div>
-                  <h3>{item.name}</h3>
-                  <p>{item.price} {item.quantity}</p>
+            <div className="cart-items-list">
+              {cartItems.map(item => (
+                <div key={item.id} className="cart-item">
+                  <div className="cart-item__img">
+                    <img src={item.img} alt={item.name} />
+                  </div>
+                  
+                  <div className="cart-item__info">
+                    <h3>{item.name}</h3>
+                    <p className="price-per-unit">{item.price}</p>
+                  </div>
+
+                  <div className="cart-item__controls">
+                    <button className="control-btn" onClick={() => dispatch(removeFromCart(item.id))}>-</button>
+                    <span className="quantity-num">{item.quantity}</span>
+                    <button className="control-btn" onClick={() => dispatch(addToCart(item))}>+</button>
+                  </div>
                 </div>
-                <button onClick={() => dispatch(removeFromCart(item.id))}>Удалить</button>
+              ))}
+            </div>
+
+            <div className="cart-summary">
+              <div className="total-info">
+                <h2>Итого к оплате:</h2>
+                <span className="total-price">{totalAmount.toLocaleString()}$</span>
               </div>
-            ))}
-            <h2>Итого: {totalAmount}$</h2>
-            <MyButton variant="yellow">Оформить</MyButton>
+              
+              <div className="cart-actions">
+                <button className="clear-cart-btn" onClick={() => dispatch(clearCart())}>
+                  Очистить корзину
+                </button>
+                
+                <button className="checkout-btn" onClick={handleCheckout}>
+                  Оформить заказ
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </div>

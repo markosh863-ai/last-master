@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="container">
         <div className="hero__content">
           <span className="hero__subtitle">100% натурально</span>
-          <h1>Масла и мука из фермерского сырья</h1>
+          <h1>Масла и мука из фермерского сыра</h1>
           <MyButton variant="yellow" icon="vector-4.png">
             В КАТАЛОГ
           </MyButton>

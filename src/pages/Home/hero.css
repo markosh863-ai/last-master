@@ -1,6 +1,4 @@
-/* Основная секция Hero */
 .hero {
-  /* Путь к картинке в папке public */
   background-image: url('/public/photo-22.png'); 
   background-size: cover;
   background-position: center;
@@ -12,35 +10,34 @@
 }
 
 .hero__content {
-  max-width: 600px; /* Чтобы текст не перекрывал масло на фоне */
+  max-width: 600px;
   padding-left: 20px;
 }
 
-/* Тот самый рукописный подзаголовок */
+
 .hero__subtitle {
   display: block;
-  color: #7EB12D; /* Зеленый цвет */
+  color: #7EB12D; 
   font-size: 32px;
-  font-family: 'Yellowtail', cursive; /* Если шрифт не подключен, будет просто курсив */
+  font-family: 'Yellowtail', cursive; 
   margin-bottom: 8px;
 }
 
-/* Главный заголовок (темно-синий) */
+
 .hero h1 {
-  color: #274C5B; /* Цвет из твоего макета */
+  color: #274C5B; 
   font-size: 56px;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 25px;
 }
 
-/* Кнопка "В КАТАЛОГ" */
 .hero .my-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #EFD372; /* Желтый фон */
-  color: #274C5B; /* Темно-синий текст */
+  background-color: #EFD372;
+  color: #274C5B; 
   padding: 16px 32px;
   border-radius: 12px;
   font-weight: 700;
@@ -54,16 +51,14 @@
   background-color: #e5c55a;
 }
 
-/* ИСПРАВЛЕНИЕ СТРЕЛКИ (чтобы не была битой) */
 .hero .button-icon {
-  width: 18px; /* Фиксируем размер */
+  width: 18px; 
   height: 18px;
-  margin-left: 10px; /* Отступ от текста */
+  margin-left: 10px; 
   display: inline-block;
   object-fit: contain;
 }
 
-/* Адаптив для мобилок */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 36px;

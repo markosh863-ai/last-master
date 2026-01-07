@@ -4,9 +4,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-/* Баннер подписки */
 .subscribe-banner {
-  /* ИСПРАВЛЕНО: заменили image-17 на photo-20, так как ты его переименовал */
   background: url('/photo-20.png') no-repeat center; 
   background-size: cover;
   padding: 80px 70px;
@@ -26,7 +24,6 @@
   line-height: 1.1;
 }
 
-/* Форма */
 .subscribe-form {
   display: flex;
   gap: 10px;
@@ -41,7 +38,7 @@
 }
 
 .btn-dark {
-  background: #274C5B; /* Темно-синий из Figma */
+  background: #274C5B;
   color: #fff;
   padding: 24px 45px;
   border-radius: 16px;
@@ -49,9 +46,9 @@
   font-weight: 700;
   cursor: pointer;
   font-size: 18px;
+  transition: all 0.3s ease;
 }
 
-/* Контент футера */
 .footer__content {
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr;
@@ -88,7 +85,6 @@
   margin-bottom: 5px;
 }
 
-/* Логотип в центре */
 .footer__logo {
   display: flex;
   align-items: center;
@@ -114,7 +110,6 @@
   margin-bottom: 30px;
 }
 
-/* Соцсети в кружочках */
 .social-links {
   display: flex;
   justify-content: center;
@@ -140,7 +135,6 @@
   color: #fff;
 }
 
-/* Список страниц */
 .footer__utility ul {
   list-style: none;
   padding: 0;
@@ -160,4 +154,10 @@
   padding: 25px 0;
   text-align: center;
   color: #525C60;
+}
+
+.btn-dark.subscribed {
+  background-color: #7EB12D !important; 
+  border-color: #7EB12D !important;
+  color: white;
 }

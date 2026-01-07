@@ -1,32 +1,39 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import './catalog.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../../store/Slice/UserSlice'; 
+import './Catalog.css';
 
 const Catalog = () => {
-  const products = useSelector(state => state.products.items || []);
+  const items = useSelector((state) => state.products.items);
+  const dispatch = useDispatch();
 
   return (
-    <div className="catalog-page">
-      <div className="container">
-        <h1 className="catalog-title">Наш ассортимент</h1>
-        <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '30px', marginTop: '40px' }}>
-          {products && products.length > 0 ? (
-            products.map((product) => (
-              <div key={product.id} className="catalog-card" style={{ border: '1px solid #eee', padding: '20px', borderRadius: '16px', textAlign: 'center' }}>
-                {/* Картинки берем из public */}
-                <img src={product.img} alt={product.name} style={{ width: '100%', marginBottom: '15px' }} />
-                <h3 style={{ color: '#274C5B' }}>{product.name}</h3>
-                <p style={{ fontWeight: 'bold', margin: '10px 0' }}>{product.price} ₽</p>
-                <Link to={`/product/${product.id}`} style={{ color: '#7EB12D', textDecoration: 'none', fontWeight: 'bold' }}>
-                  Подробнее
-                </Link>
+    <div className="catalog-container">
+      <h2 className="catalog-title">Наш ассортимент</h2>
+      <div className="products-grid">
+        {items.map((item) => (
+          <div className="product-card" key={item.id}>
+            
+            <div className="product-card__image">
+              <img src={item.img} alt={item.name} />
+            </div>
+
+            <div className="product-card__info">
+              <h3>{item.name}</h3>
+              <p className="product-card__price">{item.price}</p>
+              
+              <div className="product-card__actions">
+                <button 
+                  className="buy-button"
+                  onClick={() => dispatch(addToCart(item))}
+                >
+                  В корзину
+                </button>
               </div>
-            ))
-          ) : (
-            <p>Загрузка товаров...</p>
-          )}
-        </div>
+            </div>
+
+          </div>
+        ))}
       </div>
     </div>
   );

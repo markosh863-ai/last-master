@@ -22,7 +22,6 @@
 
 .header__logo img {
   height: 35px;
-  /* Добавим, чтобы логотип не деформировался */
   width: auto;
   object-fit: contain;
 }
@@ -81,7 +80,6 @@
 .cart-icon-circle img {
   width: 20px;
   height: 20px;
-  /* Белый цвет для иконки */
   filter: brightness(0) invert(1); 
   object-fit: contain;
 }

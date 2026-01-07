@@ -19,13 +19,11 @@ const ProductDetail = () => {
     <div className="product-detail">
       <div className="container product-detail__flex">
         <div className="product-detail__image-block">
-          {/* Исправляем путь к картинке для глубоких ссылок */}
           <img src={`/${product.img}`} alt={product.name} />
         </div>
         
         <div className="product-detail__info">
           <h1>{product.name}</h1>
-          {/* Убираем двойную валюту "$ ₽" */}
           <p className="product-detail__price">{product.price}</p>
           
           <div className="product-detail__action">

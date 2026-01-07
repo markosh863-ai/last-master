@@ -1,15 +1,13 @@
-/* Подключаем шрифты (убедись, что они есть в index.html или замени на системные) */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Yellowtail&display=swap');
 
 :root {
-  --primary-color: #274C5B;   /* Темно-синий из Figma */
-  --accent-color: #7EB12D;    /* Зеленый */
-  --text-gray: #525C60;       /* Цвет описаний */
-  --bg-light: #F9F8F8;        /* Светло-серый фон карточек */
+  --primary-color: #274C5B;   
+  --accent-color: #7EB12D;    
+  --text-gray: #525C60;       
+  --bg-light: #F9F8F8;       
   --white: #ffffff;
 }
 
-/* Обнуление стилей (Reset) */
 * {
   margin: 0;
   padding: 0;
@@ -24,14 +22,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Общий контейнер для всех страниц */
 .container {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Стили заголовков для всего приложения */
 h1, h2, h3, h4 {
   font-weight: 800;
   color: var(--primary-color);
@@ -51,7 +47,6 @@ img {
   display: block;
 }
 
-/* Глобальные вспомогательные классы */
 .section-padding {
   padding: 100px 0;
 }
@@ -60,13 +55,77 @@ img {
   text-align: center;
 }
 
-/* Анимация для кнопок и карточек */
 .hover-scale:hover {
   transform: scale(1.02);
   transition: transform 0.2s ease-in-out;
 }
 
-/* Фикс для липкого хедера */
 main {
-  min-height: calc(100vh - 200px); /* Чтобы футер не прыгал вверх */
+  min-height: calc(100vh - 200px); 
+}
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 25px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  min-height: 520px; 
+  text-align: center;
+}
+
+.product-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  height: 250px; 
+  width: 100%;
+  object-fit: contain; 
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+  height: 2.4em; 
+  overflow: hidden;
+}
+
+.product-card .price {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #27ae60;
+  word-break: break-all; 
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: #8db600;
+  font-weight: bold;
+  border: 2px solid #8db600;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.product-card a:hover {
+  background: #8db600;
+  color: #fff;
 }

@@ -1,88 +1,174 @@
-/* --- ОБЩИЕ СТИЛИ ДЛЯ ВСЕЙ СТРАНИЦЫ --- */
-.home-page {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* --- СЕКЦИЯ "О НАС" --- */
-.about-section {
-  padding: 80px 0;
-  background-color: #fff;
-}
-
-.about-flex {
+.hero {
+  background: url('/photo-22.png') no-repeat center center/cover;
+  height: 80vh;
   display: flex;
   align-items: center;
-  gap: 50px;
+  padding: 0 10%;
 }
 
-/* Стили для картинки в секции "О нас" */
-.about-image {
-  flex: 1;
+.hero-subtitle {
+  color: #8db600;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-.about-image img {
-  width: 100%;
+.hero-title {
+  font-size: 3.5rem;
+  color: #2c3e50;
   max-width: 600px;
-  border-radius: 30px;
-  /* Фото будет тянуться из /images/ */
-  display: block;
-  object-fit: cover;
+  margin: 10px 0 30px;
 }
 
-.about-text-content {
-  flex: 1;
-  max-width: 650px;
+.hero-btn {
+  background: #f1c40f;
+  color: #333;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-weight: 900;
+  border: 1px solid #333;
+  transition: 0.3s;
 }
 
-.section-subtitle {
-  font-family: 'Yellowtail', cursive;
-  color: #7EB12D; /* Твой фирменный зеленый */
-  font-size: 28px;
-  display: block;
-  margin-bottom: 10px;
+.hero-btn:hover {
+  background: #d4ac0d;
+}
+
+.about {
+  padding: 80px 0;
+  background: #fff;
 }
 
 .section-title {
-  font-size: 40px;
-  color: #274C5B;
-  font-weight: 800;
-  line-height: 1.2;
-  margin: 15px 0;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
 }
 
-.section-description {
+.about-grid {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.about-stats {
+  display: flex;
+  gap: 30px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  min-width: 120px;
+}
+.about {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.about-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1.5;
+}
+
+.about-text p {
   color: #525C60;
   font-size: 18px;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-/* Переделываем кнопку под твой новый стиль MyButton */
-.btn-details-wrapper {
-  margin-top: 20px;
+.about-features {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* --- АДАПТИВНОСТЬ ДЛЯ МОБИЛОК --- */
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #F9F8F8;
+  padding: 20px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateX(10px);
+}
+
+.feature-icon {
+  width: 55px;
+  height: 55px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  font-size: 24px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-info h4 {
+  color: #274C5B;
+  margin-bottom: 5px;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.feature-info p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.about-stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-item {
+  background: #F4F4F4;
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 40px;
+  color: #274C5B;
+  margin-bottom: 5px;
+}
+
+.stat-item p {
+  font-weight: 700;
+  color: #525C60;
+}
+
 @media (max-width: 992px) {
-  .about-flex {
+  .about-grid {
     flex-direction: column;
-    text-align: center;
-    gap: 30px;
   }
-  
-  .section-title {
-    font-size: 32px;
-  }
-
-  .about-image img {
-    max-width: 100%;
-    height: auto;
+  .about-stats {
+    flex-direction: row;
+    width: 100%;
   }
 }

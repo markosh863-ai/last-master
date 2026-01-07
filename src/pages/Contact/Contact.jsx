@@ -6,18 +6,17 @@ const Contact = () => {
     <div className="contact-page">
       <div className="container">
         <div className="contact-flex">
-          {/* Фотка теперь тянется из папки images */}
           <div className="contact-image">
-            <img 
-              src="/images/Photo (2).jpg" 
-              alt="Наши поля" 
+            <img
+              src={`${import.meta.env.BASE_URL}photo-0.jpg`} alt="Наши поля"
+              onError={(e) => console.log("Ошибка: файл /contact-photo.jpg не найден в public")}
             />
           </div>
 
           <div className="contact-info">
             <span className="section-subtitle">Contact Us</span>
             <h2 className="section-title">Мы всегда на связи, чтобы помочь вам</h2>
-            
+
             <div className="contact-methods">
               <div className="method-item">
                 <div className="method-icon">✉</div>

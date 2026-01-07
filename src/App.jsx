@@ -14,7 +14,6 @@ import './index.css';
 function App() {
   return (
     <div className="app-wrapper">
-      {/* Хедер подтянет group.png и cart-icon.png из корня public */}
       <Header />
 
       <main className="main-content">
@@ -22,18 +21,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           
-          {/* Маршрут для детальной страницы — данные возьмем из productSlice */}
           <Route path="/product/:id" element={<ProductDetail />} />
           
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           
-          {/* Страница 404 с твоим новым фоном */}
           <Route path="*" element={
             <div className="page-404" style={{ 
               textAlign: 'center', 
               padding: '100px 20px', 
-              // ИСПРАВЛЕНО: используем photo-25.png вместо hero-bg.jpg
               background: '#fff url("/photo-25.png") no-repeat center',
               backgroundSize: 'cover',
               minHeight: '80vh',

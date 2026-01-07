@@ -1,21 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './footer.css';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email.trim() !== '') {
+      setIsSubscribed(true);
+      setEmail(''); 
+      
+      setTimeout(() => setIsSubscribed(false), 3000);
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="container">
-        {/* Оранжевый баннер с тыквами. Фон управляется через footer.css (там мы уже прописали photo-20 или image-17) */}
         <div className="subscribe-banner">
           <h2>Узнайте первыми о новых акциях!</h2>
-          <form className="subscribe-form" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Ваш e-mail адрес" required />
-            <button type="submit" className="btn-dark">Подписаться</button>
+          <form className="subscribe-form" onSubmit={handleSubscribe}>
+            <input 
+              type="email" 
+              placeholder="Ваш e-mail адрес" 
+              required 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+            />
+            <button 
+              type="submit" 
+              className={`btn-dark ${isSubscribed ? 'subscribed' : ''}`}
+            >
+              {isSubscribed ? 'Подписано! ✓' : 'Подписаться'}
+            </button>
           </form>
         </div>
 
         <div className="footer__content">
-          {/* Левая колонка */}
           <div className="footer__col footer__contact">
             <h4>Contact Us</h4>
             <div className="contact-item">
@@ -32,12 +54,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Центральная колонка */}
           <div className="footer__col footer__center">
             <div className="footer__logo">
-              {/* Исправлено: путь теперь точно соответствует твоему group.png в корне public */}
               <img
-                src={`${import.meta.env.BASE_URL}group.png`}
+                src={`${import.meta.env.BASE_URL}Group.png`}
                 alt="Belatea"
               />
               <span>Belatea</span>
@@ -50,7 +70,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Правая колонка */}
           <div className="footer__col footer__utility">
             <h4>Utility Pages</h4>
             <ul>

@@ -10,10 +10,9 @@ const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   return (
     <header className="header">
       <div className="container header__flex">
-        {/* Логотип — теперь с маленькой буквы group.png */}
         <Link to="/" className="header__logo">
           <img 
-            src={`${import.meta.env.BASE_URL}group.png`} 
+            src={`${import.meta.env.BASE_URL}Group.png`} 
             alt="Belatea" 
           />
           <span>Belatea</span>
@@ -28,7 +27,6 @@ const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         <div className="header__right">
           <Link to="/cart" className="cart-btn">
             <div className="cart-icon-circle">
-              {/* Иконка корзины — берем прямо из корня public */}
               <img 
                 src={`${import.meta.env.BASE_URL}cart-icon.png`} 
                 alt="cart" 
