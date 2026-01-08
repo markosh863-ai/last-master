@@ -1,0 +1,15 @@
+.ui-input {
+  padding: 20px 25px;
+  border-radius: 16px;
+  border: 1px solid #D4D4D4;
+  font-style: italic;
+  font-size: 18px;
+  width: 100%;
+  outline: none;
+}
+@media (max-width: 768px) {
+  .ui-input {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+}

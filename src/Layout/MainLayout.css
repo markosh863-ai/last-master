@@ -1,0 +1,55 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Растягиваем на всю высоту экрана */
+  width: 100%;
+  overflow-x: hidden; /* Защита от кривого адаптива внутри страниц */
+}
+
+.main-content {
+  flex: 1 0 auto; /* Заставляет контент занимать всё свободное место, прижимая футер */
+  width: 100%;
+}
+
+/* Общий контейнер для всех страниц, чтобы контент не прилипал к краям */
+.container {
+  max-width: 1240px; /* Стандарт для твоего макета */
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- АДАПТИВКА --- */
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+  
+  /* Исправляем высоту для мобильных браузеров (Safari/Chrome) */
+  @supports (min-height: 100dvh) {
+    .main-layout {
+      min-height: 100dvh;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}

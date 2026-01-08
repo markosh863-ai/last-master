@@ -1,0 +1,30 @@
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  width: 100%;
+}
+
+.ui-loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #F3F3F3;
+  border-top: 5px solid #7EB12D; /* Твой фирменный зеленый */
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-text {
+  margin-top: 15px;
+  color: #274C5B;
+  font-family: 'Yellowtail', cursive;
+  font-size: 24px;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

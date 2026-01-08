@@ -1,0 +1,29 @@
+.product-detail__image-box {
+  background: #F9F8F8;
+  border-radius: 30px;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.product-detail__badge {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.product-detail__img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 992px) {
+  .product-detail__image-box {
+    padding: 20px;
+    height: 400px;
+  }
+}

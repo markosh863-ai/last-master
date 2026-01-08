@@ -1,0 +1,32 @@
+.ui-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.ui-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Если иконка в кружочке (например, в Header или Footer) */
+.ui-icon.circle {
+  background: #274C5B;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.ui-icon:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .ui-icon.circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+}

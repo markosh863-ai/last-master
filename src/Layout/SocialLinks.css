@@ -1,0 +1,54 @@
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social__link {
+  width: 40px;
+  height: 40px;
+  background: #EFF6F1; /* Светло-зеленый фон как в дизайне */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #274C5B;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.social__link:hover {
+  background: #274C5B;
+  color: #fff;
+}
+
+/* --- АДАПТИВКА --- */
+
+@media (max-width: 768px) {
+  .social {
+    gap: 12px; /* Чуть плотнее на планшетах */
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .social {
+    gap: 10px;
+  }
+  
+  .social__link {
+    width: 36px; /* Немного уменьшаем, чтобы не съедали место */
+    height: 36px;
+    font-size: 12px;
+  }
+}
+
+/* Если ссылки в футере должны встать по левому краю на мобилках */
+@media (max-width: 576px) {
+  .footer .social {
+    justify-content: flex-start; 
+  }
+}

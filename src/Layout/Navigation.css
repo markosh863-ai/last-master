@@ -1,0 +1,48 @@
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 30px; /* Расстояние между ссылками как в макете */
+  align-items: center;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: #274C5B;
+  font-size: 20px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  white-space: nowrap; /* Чтобы текст не перепрыгивал на вторую строку */
+}
+
+.nav__list a:hover {
+  color: #7EB12D; /* Цвет при наведении */
+}
+
+/* --- АДАПТИВКА --- */
+
+/* Планшеты (уменьшаем шрифт и отступы, чтобы всё влезло в ряд) */
+@media (max-width: 1024px) {
+  .nav__list {
+    gap: 20px;
+  }
+  .nav__list a {
+    font-size: 18px;
+  }
+}
+
+/* Мобилки (превращаем в вертикальный список) */
+@media (max-width: 768px) {
+  .nav__list {
+    flex-direction: column; /* Ссылки друг под другом */
+    gap: 15px;
+    align-items: flex-start; /* Выравнивание по левому краю */
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .nav__list a {
+    font-size: 20px; /* На мобилках покрупнее, чтобы удобно было тыкать пальцем */
+    width: 100%;
+    display: block;
+  }
+}

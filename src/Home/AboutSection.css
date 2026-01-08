@@ -1,0 +1,73 @@
+.about-section {
+  padding: 100px 0;
+  background: #F9F8F8; /* Светлый фон, как в дизайне */
+}
+
+.about-section__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-section__img {
+  flex: 1;
+}
+
+.about-section__img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.about-section__content {
+  flex: 1;
+}
+
+.about-section__desc {
+  color: #525C60;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 20px 0 40px;
+}
+
+.about-section__benefits {
+  margin-bottom: 40px;
+}
+
+/* --- АДАПТИВКА --- */
+
+@media (max-width: 1100px) {
+  .about-section__wrapper {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-section {
+    padding: 60px 0;
+  }
+  
+  .about-section__wrapper {
+    flex-direction: column; /* Картинка сверху, текст снизу */
+    text-align: center;
+  }
+
+  .about-section__img {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Выравниваем BenefitCards по центру на мобилках */
+  .about-section__benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left; /* Текст внутри карточки пусть остается слева */
+  }
+}
+
+@media (max-width: 576px) {
+  .about-section__desc {
+    font-size: 16px;
+  }
+}

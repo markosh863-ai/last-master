@@ -1,0 +1,114 @@
+:root {
+  --dark-blue: #274C5B;
+  --green: #7EB12D;
+}
+
+.header {
+  padding: 30px 0;
+  background: #fff;
+  position: sticky; /* Чтобы шапка не улетала при скролле */
+  top: 0;
+  z-index: 100;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Навигация */
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: 700;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.nav__list a:hover {
+  color: var(--green);
+}
+
+/* Действия (поиск + корзина) */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-widget {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 20px;
+  border: 1px solid #E0E0E0;
+  border-radius: 33px;
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cart-icon {
+  background: var(--dark-blue);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* --- АДАПТИВКА --- */
+
+/* Планшеты (1024px) */
+@media (max-width: 1024px) {
+  .nav__list {
+    gap: 15px; /* Уменьшаем расстояние между ссылками */
+  }
+  .nav__list a {
+    font-size: 18px;
+  }
+  .header {
+    padding: 20px 0;
+  }
+}
+
+/* Переход на мобильный вид (768px) */
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Скрываем основное меню. Тут обычно вешают бургер */
+  }
+
+  .header__actions {
+    gap: 10px;
+  }
+
+  .cart-widget {
+    padding: 5px 12px; /* Компактная корзина */
+  }
+
+  .cart-widget span:not(.cart-icon) {
+    display: none; /* Скрываем текст "Cart (0)", оставляем только иконку на очень узких экранах */
+  }
+}
+
+/* Маленькие телефоны (480px) */
+@media (max-width: 480px) {
+  .header__wrapper {
+    gap: 10px;
+  }
+  
+  /* Если логотип - текст, уменьшаем его */
+  .logo { 
+    font-size: 18px; 
+  }
+}

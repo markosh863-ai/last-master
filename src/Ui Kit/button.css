@@ -1,0 +1,38 @@
+.ui-btn {
+  padding: 18px 28px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.ui-btn.dark { background: #274C5B; color: #fff; }
+.ui-btn.yellow { background: #EFD372; color: #274C5B; }
+
+.btn-arrow {
+  background: #335B6B;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+  .ui-btn {
+    padding: 14px 22px; /* Было 18/28 */
+    font-size: 16px;    /* Было 20 */
+    border-radius: 12px;
+  }
+  .btn-arrow {
+    width: 18px;
+    height: 18px;
+  }
+}

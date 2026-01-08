@@ -1,0 +1,13 @@
+.hero {
+  background: url('../../assets/hero-bg.jpg') no-repeat center/cover;
+  height: 800px;
+  display: flex;
+  align-items: center;
+}
+.hero__subtitle { font-family: 'Yellowtail', cursive; color: #7EB12D; font-size: 36px; }
+.hero__title { color: #274C5B; font-size: 70px; font-weight: 800; margin: 10px 0 30px; max-width: 530px; }
+
+@media (max-width: 768px) {
+  .hero { height: 500px; text-align: center; }
+  .hero__title { font-size: 40px; margin: 10px auto 25px; }
+}

@@ -1,0 +1,15 @@
+.ui-badge {
+  background: #274C5B;
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  .ui-badge {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+}

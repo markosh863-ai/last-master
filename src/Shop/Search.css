@@ -1,0 +1,27 @@
+.shop-search {
+  position: relative;
+  width: 100%;
+  max-width: 350px; /* Чтобы поиск не растягивался на всю ширину */
+}
+
+/* Мы используем стили твоего UI Input, но добавляем обертку */
+.shop-search .ui-input {
+  padding-right: 50px; /* Место для иконки справа */
+  border-radius: 36px; /* Более округлый как в Figma */
+}
+
+.shop-search::after {
+  content: '🔍'; /* Временная иконка, если нет SVG */
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .shop-search {
+    max-width: 100%; /* На мобилках во всю ширину */
+  }
+}

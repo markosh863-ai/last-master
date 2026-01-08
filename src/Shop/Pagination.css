@@ -1,0 +1,52 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 60px;
+}
+
+.pagination__pages {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination__item, .pagination__arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #274C5B;
+  background: transparent;
+  color: #274C5B;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__item.active {
+  background: #274C5B;
+  color: #fff;
+}
+
+.pagination__item:hover:not(.active), 
+.pagination__arrow:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.pagination__arrow:disabled {
+  border-color: #E0E0E0;
+  color: #E0E0E0;
+  cursor: not-allowed;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+  .pagination__item, .pagination__arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+}

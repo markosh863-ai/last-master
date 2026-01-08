@@ -1,0 +1,24 @@
+.section-title .subtitle {
+  font-family: 'Yellowtail', cursive;
+  color: #7EB12D;
+  font-size: 36px;
+  display: block;
+}
+
+.section-title .title {
+  color: #274C5B;
+  font-size: 50px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+@media (max-width: 768px) {
+  .ui-btn {
+    padding: 14px 22px; /* Было 18/28 */
+    font-size: 16px;    /* Было 20 */
+    border-radius: 12px;
+  }
+  .btn-arrow {
+    width: 18px;
+    height: 18px;
+  }
+}

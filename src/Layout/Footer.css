@@ -1,0 +1,100 @@
+.footer {
+  padding: 100px 0;
+  background: #fff;
+  border-top: 1px solid #ececec;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  /* Убираем text-align: center отсюда, чтобы на десктопе было по краям */
+  gap: 40px;
+}
+
+/* Общий стиль для колонок */
+.footer__col {
+  flex: 1;
+}
+
+/* Левая колонка — текст вправо */
+.footer__col--contacts {
+  text-align: right;
+}
+
+/* Центральная колонка — по центру */
+.footer__col--logo {
+  text-align: center;
+  border-left: 1px solid #D4D4D4;
+  border-right: 1px solid #D4D4D4;
+  padding: 0 40px;
+}
+
+/* Правая колонка — текст влево */
+.footer__col--utility {
+  text-align: left;
+}
+
+.footer h3 {
+  color: #274C5B;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.footer p {
+  color: #525C60;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* --- АДАПТИВКА --- */
+
+/* Планшеты (1024px) */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 60px 0;
+  }
+  .footer__col--logo {
+    padding: 0 20px;
+  }
+}
+
+/* Переход на вертикальный вид (768px) */
+@media (max-width: 768px) {
+  .footer__wrapper {
+    flex-direction: column; /* Колонки встают друг под другом */
+    align-items: center;
+    text-align: center; /* Центрируем всё для мобилок */
+    gap: 50px;
+  }
+
+  .footer__col--contacts,
+  .footer__col--utility {
+    text-align: center; /* Сбрасываем выравнивание по бокам */
+  }
+
+  .footer__col--logo {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #D4D4D4;
+    border-bottom: 1px solid #D4D4D4;
+    padding: 30px 0;
+    width: 100%;
+  }
+  
+  .footer h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+  }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0;
+  }
+  .footer p {
+    font-size: 16px;
+  }
+}

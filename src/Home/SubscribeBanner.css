@@ -1,0 +1,16 @@
+.subscribe__wrapper {
+  background: url('../../assets/sub-bg.jpg') no-repeat center/cover;
+  border-radius: 30px;
+  padding: 100px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subscribe__title { color: #fff; font-size: 50px; font-weight: 800; max-width: 350px; }
+.subscribe__form { display: flex; gap: 10px; }
+
+@media (max-width: 992px) {
+  .subscribe__wrapper { flex-direction: column; gap: 30px; text-align: center; padding: 50px 30px; }
+  .subscribe__title { font-size: 32px; }
+  .subscribe__form { flex-direction: column; width: 100%; }
+}
