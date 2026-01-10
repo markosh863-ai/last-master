@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from '../../Ui Kit/SectionTitle';
+import SectionTitle from '../Ui Kit/SectionTitle';
 import TestimonialCard from './TestimonialCard';
 import './Testimonials.css';
 

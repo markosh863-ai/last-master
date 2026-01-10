@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionTitle from '../../Ui Kit/SectionTitle';
+import SectionTitle from '../Ui Kit/SectionTitle';
 import TestimonialCard from './TestimonialCard';
 import './Testimonials.css';
-import userAvatar from '../../assets/user-avatar.png'; // Путь к фото клиента
+import userAvatar from '../../public/photo-25.jpg'; 
 
 const Testimonials = () => {
   return (

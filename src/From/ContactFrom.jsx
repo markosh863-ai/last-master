@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../Ui Kit/Button';
+import Button from '../Ui Kit/Button';
 import './ContactForm.css';
 
 const ContactForm = () => {

@@ -1,11 +1,11 @@
 import React from 'react';
-import SectionTitle from '../../Ui Kit/SectionTitle';
+import SectionTitle from '../Ui Kit/SectionTitle';
 import BenefitCard from './BenefitCard';
-import Button from '../../Ui Kit/Button';
+import Button from '../Ui Kit/Button';
 import './AboutSection.css';
-import aboutImg from '../../assets/about-img.png'; // Путь к главной картинке секции
-import icon1 from '../../assets/icons/about-icon1.png'; // Иконка "Organic Foods Only"
-import icon2 from '../../assets/icons/about-icon2.png'; // Иконка "Quality Standards"
+import aboutImg from '../../public/photo-18.png'; 
+import icon1 from '../../public/Natural-Food.png'; 
+import icon2 from '../../public/Phone-Time.png'; 
 
 const AboutSection = () => {
   return (

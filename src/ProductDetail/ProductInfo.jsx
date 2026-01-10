@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../Ui Kit/Button';
+import Button from '../Ui Kit/Button';
 import './ProductInfo.css';
 
 const ProductInfo = ({ name, price, oldPrice, rating, description }) => {

@@ -11,7 +11,6 @@
   object-fit: contain;
 }
 
-/* Если иконка в кружочке (например, в Header или Footer) */
 .ui-icon.circle {
   background: #274C5B;
   width: 35px;

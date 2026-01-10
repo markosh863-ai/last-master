@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../Ui Kit/Button';
+import Button from '../Ui Kit/Button';
 import './Hero.css';
 
 const Hero = () => (

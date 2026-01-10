@@ -1,114 +1,138 @@
-:root {
-  --dark-blue: #274C5B;
-  --green: #7EB12D;
+/* Обнуление для хедера */
+.header {
+  padding: 20px 0;
+  background-color: #ffffff;
+  width: 100%;
 }
 
-.header {
-  padding: 30px 0;
-  background: #fff;
-  position: sticky; /* Чтобы шапка не улетала при скролле */
-  top: 0;
-  z-index: 100;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .header__wrapper {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-}
-
-/* Навигация */
-.nav__list {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-}
-
-.nav__list a {
-  text-decoration: none;
-  color: var(--dark-blue);
-  font-weight: 700;
-  font-size: 20px;
-  transition: 0.3s;
-}
-
-.nav__list a:hover {
-  color: var(--green);
-}
-
-/* Действия (поиск + корзина) */
-.header__actions {
-  display: flex;
-  align-items: center;
   gap: 20px;
 }
 
-.cart-widget {
+/* --- LOGO (из твоего Ui Kit) --- */
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 5px 20px;
-  border: 1px solid #E0E0E0;
-  border-radius: 33px;
   text-decoration: none;
-  color: var(--dark-blue);
-  font-weight: 600;
-  transition: 0.3s;
 }
 
-.cart-icon {
-  background: var(--dark-blue);
-  width: 35px;
-  height: 35px;
+.logo img {
+  width: 36px; /* Твой Group.png */
+  height: auto;
+}
+
+.logo span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #274C5B;
+}
+
+/* --- NAVIGATION --- */
+.navigation ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #274C5B;
+  font-weight: 700;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: #7EB12D;
+}
+
+/* --- ACTIONS (Search & Cart) --- */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Поиск */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background: seashell;
+  border: none;
+  border-radius: 36px;
+  padding: 12px 50px 12px 20px;
+  width: 250px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-btn {
+  position: absolute;
+  right: 5px;
+  width: 42px;
+  height: 42px;
+  background-color: #7EB12D; /* Зеленый круг из */
+  border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  cursor: pointer;
+  padding: 0;
 }
 
-/* --- АДАПТИВКА --- */
-
-/* Планшеты (1024px) */
-@media (max-width: 1024px) {
-  .nav__list {
-    gap: 15px; /* Уменьшаем расстояние между ссылками */
-  }
-  .nav__list a {
-    font-size: 18px;
-  }
-  .header {
-    padding: 20px 0;
-  }
+.search-btn img {
+  width: 18px; /* Твой Vector (5).png */
+  filter: brightness(0) invert(1); /* Делает иконку белой как на */
 }
 
-/* Переход на мобильный вид (768px) */
-@media (max-width: 768px) {
-  .nav {
-    display: none; /* Скрываем основное меню. Тут обычно вешают бургер */
-  }
-
-  .header__actions {
-    gap: 10px;
-  }
-
-  .cart-widget {
-    padding: 5px 12px; /* Компактная корзина */
-  }
-
-  .cart-widget span:not(.cart-icon) {
-    display: none; /* Скрываем текст "Cart (0)", оставляем только иконку на очень узких экранах */
-  }
+/* Корзина */
+.cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 20px 5px 5px;
+  border: 1px solid #E0E0E0;
+  border-radius: 33px;
+  text-decoration: none;
+  min-width: 150px;
 }
 
-/* Маленькие телефоны (480px) */
-@media (max-width: 480px) {
-  .header__wrapper {
-    gap: 10px;
-  }
-  
-  /* Если логотип - текст, уменьшаем его */
-  .logo { 
-    font-size: 18px; 
-  }
+.cart-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #274C5B; /* Синий круг из */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-icon img {
+  width: 22px; /* Твой cart-icon.png */
+  filter: brightness(0) invert(1); /* Делает иконку белой */
+}
+
+.cart-text {
+  color: #274C5B;
+  font-weight: 700;
+  font-size: 18px;
+  white-space: nowrap;
 }

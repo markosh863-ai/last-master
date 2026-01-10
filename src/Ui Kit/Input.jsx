@@ -1,5 +1,5 @@
 import React from 'react';
-import './iput.css'; // Ты назвал файл iput.css на скрине, используем так
+import './input.css'; 
 
 const Input = ({ placeholder }) => {
   return <input className="ui-input" type="text" placeholder={placeholder} />;

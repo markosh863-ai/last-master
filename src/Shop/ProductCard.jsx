@@ -1,5 +1,5 @@
 import React from 'react';
-import Badge from '../../Ui Kit/Badge'; // Проверь путь к Ui Kit
+import Badge from '../Ui Kit/Badge'; // Проверь путь к Ui Kit
 import './ProductCard.css';
 
 const ProductCard = ({ category, name, price, oldPrice, image, rating }) => {

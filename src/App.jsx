@@ -1,50 +1,43 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom'; // Добавил Link
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Home from './pages/Home/Home';
-import Catalog from './pages/Catalog/Catalog';
-import ProductDetail from './pages/ProductDetail/ProductDetail';
-import Cart from './pages/Cart/Cart';
-import Contact from './pages/Contact/Contact';
-import MyButton from './Ui Kit/Button';
-import './App.css';
-import './index.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-function App() {
+import Header from './Layout/Header';
+import Footer from './Layout/Footer';
+import Hero from './Home/Hero';
+
+const App = () => {
   return (
     <div className="app-wrapper">
       <Header />
-
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* Если в поиске /last, перекидываем на главную, чтобы не было 404 */}
+          <Route path="/last" element={<Navigate to="/" replace />} />
           
-          {/* Страница 404 */}
-          <Route path="*" element={
-            <div className="page-404">
-              <div className="page-404__content">
-                <h1>404</h1>
-                <h2>Страница не найдена</h2>
-                <p>Похоже, этот продукт еще не вырос или был съеден!</p>
-                
-                {/* Используем Link вместо <a> */}
-                <Link to="/">
-                  <MyButton variant="primary">Вернуться на главную</MyButton>
-                </Link>
-              </div>
+          {/* ГЛАВНАЯ */}
+          <Route path="/" element={<Hero />} />
+          
+          {/* МАГАЗИН */}
+          <Route path="/shop" element={
+            <div style={{ padding: '150px 20px', textAlign: 'center' }}>
+              <h1 style={{ color: "red", fontSize: "60px" }}>ЭТО МАГАЗИН!</h1>
             </div>
           } />
+          
+          {/* О НАС */}
+          <Route path="/about" element={
+            <div style={{ padding: '150px 20px', textAlign: 'center' }}>
+              <h1>About Bebalea Page</h1>
+            </div>
+          } />
+
+          {/* Вместо 404 всегда показываем Hero, чтобы сайт не падал */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
-
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

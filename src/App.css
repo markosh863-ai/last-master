@@ -1,64 +1,93 @@
+/* --- 1. СБРОС СТИЛЕЙ И БАЗА --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Основной шрифт Bebalea */
+  background-color: #ffffff;
+  color: #274C5B;
+  overflow-x: hidden; /* Чтобы не было горизонтальной прокрутки */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- 2. ГЛОБАЛЬНАЯ СТРУКТУРА (ФУТЕР ВСЕГДА ВНИЗУ) --- */
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* Растягиваем на всю высоту экрана */
 }
 
 .main-content {
-  flex: 1 0 auto; /* Прижимает футер к низу */
+  flex: 1 0 auto; /* Эта магия толкает футер к самому низу */
 }
 
-/* Стили для 404 страницы */
-.page-404 {
-  text-align: center;
-  padding: 100px 20px;
-  background: #fff url("../public/photo-25.png") no-repeat center;
-  background-size: cover;
-  min-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+/* --- 3. КОНТЕЙНЕР (СЕТКА САЙТА) --- */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px; /* Отступы по бокам, чтобы текст не лип к краям */
 }
 
-/* Оверлей, если картинка слишком яркая и текст плохо читается */
-.page-404::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 255, 255, 0.6);
-  z-index: 1;
-}
-
-.page-404__content {
-  position: relative;
-  z-index: 2;
-}
-
-.page-404 h1 {
-  font-size: clamp(80px, 15vw, 150px); /* Адаптивный размер шрифта */
+/* --- 4. ТИПОГРАФИКА (ШРИФТЫ) --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   color: #274C5B;
-  margin: 0;
-  line-height: 1;
 }
 
-.page-404 h2 {
-  color: #274C5B;
-  margin-bottom: 20px;
-  font-size: clamp(24px, 5vw, 40px);
-}
-
-.page-404 p {
+p {
+  font-family: 'Open Sans', sans-serif; /* Для длинных текстов */
   color: #525C60;
-  margin-bottom: 30px;
-  font-size: 18px;
+  line-height: 1.6;
 }
 
-/* Адаптив для 404 */
-@media (max-width: 768px) {
-  .page-404 {
-    padding: 60px 20px;
-    background-position: right center; /* Смещаем фон, чтобы текст был виден */
-  }
+/* --- 5. ОБЩИЕ СТИЛИ ДЛЯ СТРАНИЦ --- */
+.page-placeholder {
+  padding: 140px 0;
+  text-align: center;
+}
+
+.page-placeholder h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+/* --- 6. КНОПКИ (УНИВЕРСАЛЬНЫЕ) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  border-radius: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn--dark {
+  background-color: #274C5B;
+  color: #fff;
+}
+
+.btn--dark:hover {
+  background-color: #335b6a;
+}
+
+.btn--yellow {
+  background-color: #EFD372;
+  color: #274C5B;
+}
+
+/* --- 7. АНИМАЦИИ --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.main-content {
+  animation: fadeIn 0.5s ease-out;
 }
